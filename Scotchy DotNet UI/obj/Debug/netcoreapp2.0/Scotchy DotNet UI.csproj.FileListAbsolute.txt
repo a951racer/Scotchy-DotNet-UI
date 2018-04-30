@@ -1,0 +1,11 @@
+D:\Documents\Google Drive\Coding Projects\Dot-Net Projects\Scotchy-DotNet-UI\Scotchy DotNet UI\obj\Debug\netcoreapp2.0\Scotchy DotNet UI.csprojResolveAssemblyReference.cache
+D:\Documents\Google Drive\Coding Projects\Dot-Net Projects\Scotchy-DotNet-UI\Scotchy DotNet UI\obj\Debug\netcoreapp2.0\Scotchy DotNet UI.csproj.CoreCompileInputs.cache
+D:\Documents\Google Drive\Coding Projects\Dot-Net Projects\Scotchy-DotNet-UI\Scotchy DotNet UI\obj\Debug\netcoreapp2.0\Scotchy DotNet UI.AssemblyInfoInputs.cache
+D:\Documents\Google Drive\Coding Projects\Dot-Net Projects\Scotchy-DotNet-UI\Scotchy DotNet UI\obj\Debug\netcoreapp2.0\Scotchy DotNet UI.AssemblyInfo.cs
+D:\Documents\Google Drive\Coding Projects\Dot-Net Projects\Scotchy-DotNet-UI\Scotchy DotNet UI\bin\Debug\netcoreapp2.0\Scotchy-DotNet-UI.deps.json
+D:\Documents\Google Drive\Coding Projects\Dot-Net Projects\Scotchy-DotNet-UI\Scotchy DotNet UI\bin\Debug\netcoreapp2.0\Scotchy-DotNet-UI.runtimeconfig.json
+D:\Documents\Google Drive\Coding Projects\Dot-Net Projects\Scotchy-DotNet-UI\Scotchy DotNet UI\bin\Debug\netcoreapp2.0\Scotchy-DotNet-UI.runtimeconfig.dev.json
+D:\Documents\Google Drive\Coding Projects\Dot-Net Projects\Scotchy-DotNet-UI\Scotchy DotNet UI\bin\Debug\netcoreapp2.0\Scotchy-DotNet-UI.dll
+D:\Documents\Google Drive\Coding Projects\Dot-Net Projects\Scotchy-DotNet-UI\Scotchy DotNet UI\bin\Debug\netcoreapp2.0\Scotchy-DotNet-UI.pdb
+D:\Documents\Google Drive\Coding Projects\Dot-Net Projects\Scotchy-DotNet-UI\Scotchy DotNet UI\obj\Debug\netcoreapp2.0\Scotchy-DotNet-UI.dll
+D:\Documents\Google Drive\Coding Projects\Dot-Net Projects\Scotchy-DotNet-UI\Scotchy DotNet UI\obj\Debug\netcoreapp2.0\Scotchy-DotNet-UI.pdb

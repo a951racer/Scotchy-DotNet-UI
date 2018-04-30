@@ -1,0 +1,85 @@
+table {
+	width: 95%;
+    float:none;
+	border-collapse: collapse;
+	background-color: #d0dfd2;
+	color: #374f3a;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #374f3a;
+	padding: 0;
+	margin: 10px;
+}
+
+th {
+	height: 30px;
+	border-right-style: solid;
+	border-width: 1px;
+	border-color: #d0dfd2;
+	background-color: #003804;
+	color: white;
+	text-align: left;
+	font-weight: normal;
+	padding: 5px;
+}
+
+tr:hover, tr:nth-child(even):hover {
+	background-color: #ffff80
+}
+
+tr:nth-child(even) {
+	background-color: #e0fce1
+}
+
+td {
+	border-bottom: 1px solid #374f3a;
+	padding: 5px 5px 3px 5px;
+}
+
+/******************************
+    Tasting Table 
+*******************************/
+
+.tastingColumn {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.openColumn {
+    #width: 10px;
+    width: 20%;
+}
+
+.dateColumn {
+    width: 90px;
+}
+
+.thirdPartyColumn {
+    width: 85px;
+    text-align: center;
+}
+
+.ratingColumn {
+    width: 75px;
+}
+
+.nameColumn {
+    max-width: 100px;
+}
+
+.textColumn {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 165px;
+}
+
+.editColumn {
+    /* max-width: 43px; */
+}
+
+.hiddenData {
+    display: none;
+}

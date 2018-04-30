@@ -1,0 +1,108 @@
+﻿/***************************************
+    Global
+*****************************************/
+body {
+    font-family: sans-serif;
+    font-size: initial;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+h2 {
+    color: darkgreen;
+}
+
+
+h3 {
+    font-family: sans-serif;
+}
+
+h4 {
+    font-size: 110%;
+    color: darkgreen;
+    margin-top: 0;
+    text-decoration: underline;
+}
+
+footer {
+    background-image: url('../images/plaid.jpg');
+    color: white;
+    text-align: center;
+    height: 53px;
+    padding-top: 20px;
+    font-size: 100%;
+    vertical-align: middle;
+    border-radius: 7px;
+    box-shadow: 5px 5px 10px gray;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover, a:active {
+    text-decoration: underline;
+    color: darkgreen;
+}
+
+
+.navbar-inverse {
+    background-image: url('../images/plaid.jpg');
+}
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #88ad8d;
+    }
+
+    .navbar-inverse .navbar-brand {
+        color: #88ad8d;
+        font-weight: bold;
+    }
+
+    .navbar-inverse .navbar-toggle .icon-bar {
+        background-color: #88ad8d;
+    }
+    
+.checkbox label {
+    color: darkgreen;
+    font-weight: 700;
+}
+
+.control-label {
+    color: darkgreen;
+}
+
+.btn-default {
+    background-color: #88ad8d;
+    border-radius: 3px;
+    border: 2px solid black;
+    #height: 20px;
+    #margin: 3px;
+    font-family: sans-serif;
+    color: black;
+    #padding: 4px 6px 4px 4px;
+}
+
+    .btn-default:hover {
+        background-color: #003804;
+        color: white;
+    }
+
+.link {
+    padding: 2px;
+}
+
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}

@@ -1,0 +1,55 @@
+/* global styles */
+
+a:link, a:visited, a:hover, a:active
+{
+    text-decoration: none;
+    color: black;
+}
+
+a:hover, a:active
+{
+    text-decoration: underline;
+    color: darkgreen;
+}
+
+body
+{
+    font-family: sans-serif;
+}
+
+h3
+{
+    font-family: sans-serif;
+}
+
+h4
+{
+    font-size: 110%;
+    color: darkgreen;
+    margin-top: 0;
+    text-decoration: underline;
+}
+
+.btn-default
+{
+    background-color: #88ad8d;
+    border-radius: 3px;
+    border: 2px solid black;
+    #height: 20px;
+    #margin: 3px;
+    font-family: sans-serif;
+    color: black;
+    #padding: 4px 6px 4px 4px;
+}
+
+.btn-default:hover
+{
+    background-color: #003804;
+    color: white;
+}
+
+.link
+{
+    padding: 2px;
+}
+

@@ -1,0 +1,55 @@
+﻿/***************************************
+    Scotch Details View
+****************************************/
+
+.scotchDetailHeader {
+
+}
+
+.scotchDetails {
+    margin: 2px 0 20px 0;
+}
+
+.spacer {
+    padding-top: 20px;
+}
+
+.scotch-rating {
+    font-family: fantasy;
+    font-size: 225%;
+    color: darkorange;
+    float: left;
+    width: 50%;
+}
+
+.star {
+    float: left;
+}
+
+
+
+.editIcon {
+    font-size: 150%;
+    color: darkred;
+    margin: 30px 5px 8px 5px;
+}
+
+
+.in-stock {
+    font-size: 150%;
+    text-align: right;
+    float: right;
+    width: 50%;
+}
+
+.check-mark {
+    color: darkgreen;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.red-x {
+    color: red;
+    font-size: 150%;
+    font-weight: bold;
+}

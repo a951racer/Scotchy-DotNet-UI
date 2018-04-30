@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Tasting.Model.TastingDTO>
+
+@{
+    ViewData["Title"] = "Tastings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tastings</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th class="dateColumn">
+                @Html.DisplayNameFor(model => model.dateAddedPretty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dramName)
+            </th>
+            <th class="ratingColumn">
+                @Html.DisplayNameFor(model => model.personal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rating)
+            </th>
+            <th class="textColumn">
+                @Html.DisplayNameFor(model => model.nose)
+            </th>
+            <th class="textColumn">
+                @Html.DisplayNameFor(model => model.palate)
+            </th>
+            <th class="textColumn">
+                @Html.DisplayNameFor(model => model.finish)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item._id }, new { @class = "btn-sm btn-default" })
+            </td>
+            <td class="dateColumn">
+                @Html.DisplayFor(modelItem => item.dateAddedPretty)
+            </td>
+            <td class="textColumn">
+                @Html.DisplayFor(modelItem => item.dramName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.personal)
+            </td>
+            <td class="ratingColumn">
+                @Html.DisplayFor(modelItem => item.rating)
+            </td>
+            <td class="textColumn">
+                @Html.DisplayFor(modelItem => item.nose)
+            </td>
+            <td class="textColumn">
+                @Html.DisplayFor(modelItem => item.palate)
+            </td>
+            <td class="textColumn">
+                @Html.DisplayFor(modelItem => item.finish)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

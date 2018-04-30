@@ -1,0 +1,41 @@
+.tastingColumn {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+.openColumn {
+  width: 10px;
+}
+
+.dateColumn {
+  width: 90px;
+}
+
+.thirdPartyColumn {
+  width: 85px;
+  text-align: center;
+}
+
+.ratingColumn {
+  width: 75px;
+}
+.nameColumn {
+  max-width: 100px;
+}
+
+.descriptionColumn {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 250px;
+}
+
+.editColumn {
+  /* max-width: 43px; */
+}
+
+.hiddenData {
+  display: none;
+}

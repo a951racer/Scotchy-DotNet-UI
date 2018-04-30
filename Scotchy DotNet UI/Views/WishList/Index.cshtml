@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WishList.Model.WishListDTO>
+
+@{
+    ViewData["Title"] = "Wish Lists";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Wish Lists</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-default"><i class="fa fa-plus"></i> New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.wishListName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item._id }, new { @class = "btn-sm btn-default" })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.wishListName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item._id }, new { @class = "btn-sm btn-default" })
+                @Html.ActionLink("Delete", "Delete", new { id = item._id }, new { @class = "btn-sm btn-default" })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

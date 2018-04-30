@@ -1,0 +1,68 @@
+﻿@model Scotch.Model.ScotchDTO
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete - @Html.DisplayFor(model => model.dramName)</h2>
+
+<h3>Are you sure you want to delete this scotch?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.distillerName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.distillerName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.flavor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.flavor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.age)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.age)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.style)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.style)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.region)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.region)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.inStock)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.inStock)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.bottlingNotes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.bottlingNotes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.comment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.comment)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-default" />
+        <a asp-action="Index" class="btn btn-default">Cancel</a>
+    </form>
+</div>

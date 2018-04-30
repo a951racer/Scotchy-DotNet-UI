@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Scotch.Model.ScotchDTO>
+
+@{
+    ViewData["Title"] = "Scotches";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Scotches</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-default"><i class="fa fa-plus"></i> New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.distillerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.flavor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.style)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.region)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.inStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rating)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item._id }, new { @class = "btn-sm btn-default" })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.distillerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.flavor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.style)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.region)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.inStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rating)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item._id }, new { @class = "btn-sm btn-default" })
+                @Html.ActionLink("Delete", "Delete", new { id = item._id }, new { @class = "btn-sm btn-default" })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

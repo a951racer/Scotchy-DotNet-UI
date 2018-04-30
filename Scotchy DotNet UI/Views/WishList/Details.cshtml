@@ -1,0 +1,52 @@
+﻿@model WishListDetails.Model.WishListDetailsDTO
+
+@{
+    ViewData["Title"] = "Wish List Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Html.DisplayFor(model => model.wishlist.wishListName)</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.wishlist.description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.wishlist.description)
+        </dd>
+    </dl>
+</div>
+
+<h3>Scotches</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.scotches[0].dramName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var scotch in Model.scotches)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => scotch.dramName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = scotch._id }) |
+                    @Html.ActionLink("Details", "Details", new { id = scotch._id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = scotch._id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-action="Index" class="btn btn-default">Return</a>
+</div>

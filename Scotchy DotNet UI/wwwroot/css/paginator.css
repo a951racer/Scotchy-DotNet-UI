@@ -1,0 +1,44 @@
+.pageCounter {
+  width: 100%;
+  /* float: left;*/
+  text-align: center;
+  font-size: 120%;
+  font-weight: bold;
+  margin: 20px 5px;
+  color: #003804;
+}
+
+.pagination {
+  display: block;
+  text-align: center;
+}
+
+.pagination a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-width: 1px;
+  border-color: darkolivegreen;
+  border-style: solid;
+  margin-right: -1px;
+}
+
+.pagination a.active {
+  background-color: #003804;
+  color: white;
+}
+
+.pagination a.disabled {
+  color: #aabf84;
+  border-color: #aabf84;
+}
+
+.pagination a:hover:not(.active):not(.disabled) {
+  background-color: #003804;
+  color: white;
+  cursor: pointer;
+}
+
+.paginator {
+  padding-top: 10px;
+}
