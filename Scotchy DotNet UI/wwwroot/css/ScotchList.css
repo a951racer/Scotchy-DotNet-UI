@@ -1,0 +1,58 @@
+﻿.openColumn {
+    max-width: 25px;
+}
+
+.distillerColumn {
+    max-width: 80px;
+}
+
+.expressionColumn {
+    max-width: 80px;
+}
+
+.ageColumn {
+    max-width: 15px;
+    text-align: right;
+}
+
+.styleColumn {
+    max-width: 32px;
+}
+
+.regionColumn {
+    max-width: 25px;
+}
+
+.ratingColumn {
+    min-width: 40px;
+    max-width: 100px;
+}
+
+.instockColumn {
+    max-width: 95px;
+    text-align: center;
+}
+
+.editColumn {
+    min-width: 43px;
+}
+
+.check-mark {
+    color: darkgreen;
+    font-size: 110%;
+    font-weight: bold;
+}
+
+.red-x {
+    color: #c74949;
+    font-size: 110%;
+    font-weight: bold;
+}
+
+.hiddenData {
+    display: none;
+}
+
+.filterRow {
+    background-color: darkolivegreen;
+}

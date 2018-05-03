@@ -48,6 +48,7 @@ namespace WishList.Controllers
             {
                 var result = res.Content.ReadAsStringAsync().Result;
                 dto = JsonConvert.DeserializeObject<WishListDetailsDTO>(result);
+                ViewBag.returnUrl = Request.Headers["Referer"].ToString();
             }
 
             //var WishList = dto.SingleOrDefault(m => m.wishListName == wishListName);
@@ -62,6 +63,7 @@ namespace WishList.Controllers
         // GET: WishLists/Create  
         public IActionResult Create()
         {
+            ViewBag.returnUrl = Request.Headers["Referer"].ToString();
             return View();
         }
 
@@ -100,6 +102,7 @@ namespace WishList.Controllers
             {
                 var result = res.Content.ReadAsStringAsync().Result;
                 dto = JsonConvert.DeserializeObject<WishListDetailsDTO>(result);
+                ViewBag.returnUrl = Request.Headers["Referer"].ToString();
             }
 
             //var WishList = dto.SingleOrDefault(m => m.wishListName == wishListName);
@@ -115,7 +118,7 @@ namespace WishList.Controllers
         // POST: WishLists/Edit/1  
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(string id, [Bind("wishListName,description,_id")] WishListDTO WishList)
+        public IActionResult Edit(string id, string returnUrl, [Bind("wishListName,description,_id")] WishListDTO WishList)
         {
             if (id != WishList._id)
             {
@@ -130,9 +133,10 @@ namespace WishList.Controllers
                 HttpResponseMessage res = client.PutAsync("/api/wishlists/" + id, content).Result;
                 if (res.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("Index");
+                    return Redirect(returnUrl);
                 }
             }
+            ViewBag.returnUrl = returnUrl;
             return View(WishList);
         }
 
@@ -152,6 +156,7 @@ namespace WishList.Controllers
             {
                 var result = res.Content.ReadAsStringAsync().Result;
                 dto = JsonConvert.DeserializeObject<WishListDetailsDTO>(result);
+                ViewBag.returnUrl = Request.Headers["Referer"].ToString();
             }
 
             //var WishList = dto.SingleOrDefault(m => m.wishListName == wishListName);
@@ -178,5 +183,9 @@ namespace WishList.Controllers
             return NotFound();
         }
 
+        public IActionResult Cancel(string returnUrl)
+        {
+            return Redirect(returnUrl);
+        }
     }
 }

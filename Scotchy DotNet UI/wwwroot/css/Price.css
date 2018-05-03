@@ -1,0 +1,15 @@
+﻿.commentColumn {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.dateColumn {
+    min-width: 105px;
+}
+
+.currencyColumn {
+    text-align: right;
+    width: 80px;
+}

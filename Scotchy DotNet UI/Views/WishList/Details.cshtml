@@ -36,17 +36,19 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => scotch.dramName)
+                    @Html.ActionLink(scotch.dramName, "Details", "Scotch", new { id = scotch._id })
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = scotch._id }) |
-                    @Html.ActionLink("Details", "Details", new { id = scotch._id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = scotch._id })
+                    @Html.ActionLink("Delete", "Delete", new { id = scotch._id }, new { @class = "btn-sm btn-default" })
                 </td>
             </tr>
         }
     </tbody>
 </table>
-<div>
-    <a asp-action="Index" class="btn btn-default">Return</a>
+<div class="hidden">
+    <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
 </div>
+<div>
+    <a href="@ViewBag.returnUrl" class="btn btn-default">Back</a>
+</div>
+

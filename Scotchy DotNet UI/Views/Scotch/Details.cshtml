@@ -1,4 +1,5 @@
-﻿<link href="~/css/ScotchDetails.css" rel="stylesheet" />
+﻿<link href="~/css/Tabs.css" rel="stylesheet" />
+<link href="~/css/ScotchDetails.css" rel="stylesheet" />
 
 @model Scotch.Model.ScotchDTO
 @{
@@ -72,12 +73,6 @@
             @Html.DisplayFor(model => model.region)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.inStock)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.inStock)
-        </dd>
-        <dt>
             @Html.DisplayNameFor(model => model.bottlingNotes)
         </dt>
         <dd>
@@ -89,206 +84,213 @@
         <dd>
             @Html.DisplayFor(model => model.comment)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.rating)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.rating)
-        </dd>
     </dl>
 </div>
 
-<h3>Notes</h3>
-<table class="table">
-    <thead>
-        <tr>
-            <th class="dateColumn">
-                @Html.DisplayNameFor(model => model.notes[0].dateAdded)
-            </th>
-            <th class="textColumn">
-                @Html.DisplayNameFor(model => model.notes[0].note)
-            </th>
-            <th class="editColumn"></th>
-        </tr>
-    </thead>
+<div class="container">
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#notes">Notes</a></li>
+        <li><a data-toggle="tab" href="#mytasting">My Tasting Notes</a></li>
+        <li><a data-toggle="tab" href="#3rdtasting">3rd Party Tasting Notes</a></li>
+        <li><a data-toggle="tab" href="#wishlists">Wish Lists</a></li>
+        <li><a data-toggle="tab" href="#pricelist">Price List</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="notes" class="tab-pane fade in active">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="dateColumn">
+                            @Html.DisplayNameFor(model => model.notes[0].dateAdded)
+                        </th>
+                        <th class="textColumn">
+                            @Html.DisplayNameFor(model => model.notes[0].note)
+                        </th>
+                        <th class="editColumn"></th>
+                    </tr>
+                </thead>
 
-    <tbody>
-        @foreach (var note in Model.notes)
-        {
-            <tr>
-                <td class="dateColumn">
-                    @Html.DisplayFor(modelItem => note.dateAdded)
-                </td>
-                <td class="textColumn">
-                    @Html.DisplayFor(modelItem => note.note)
-                </td>
-                <td class="editColumn">
-                    <div>
-                        @Html.ActionLink("Edit", "Edit", new { id = note._id }, new { @class = "btn-sm btn-default" })
-                        @Html.ActionLink("Delete", "Delete", new { id = note._id }, new { @class = "btn-sm btn-default" })
-                    </div>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-
-
-<h3>My Tasting Notes</h3>
-<table class="table">
-    <thead>
-        <tr>
-            <th class="dateColumn">
-                @Html.DisplayNameFor(model => model.tastings[0].dateAddedPretty)
-            </th>
-            <th class="ratingColumn">
-                @Html.DisplayNameFor(model => model.tastings[0].rating)
-            </th>
-            <th class="textColumn">
-                @Html.DisplayNameFor(model => model.tastings[0].nose)
-            </th>
-            <th class="textColumn">
-                @Html.DisplayNameFor(model => model.tastings[0].palate)
-            </th>
-            <th class="textColumn">
-                @Html.DisplayNameFor(model => model.tastings[0].finish)
-            </th>
-            <th class="textColumn">
-                @Html.DisplayNameFor(model => model.tastings[0].comment)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-
-    <tbody>
-        @foreach (var tasting in Model.tastings)
-        {
-            @if (tasting.personal)
+                <tbody>
+                    @foreach (var note in Model.notes)
             {
-                <tr>
-                    <td class="dateColumn">
-                        @Html.DisplayFor(modelItem => tasting.dateAddedPretty)
-                    </td>
-                    <td class="ratingColumn">
-                        @Html.DisplayFor(modelItem => tasting.rating)
-                    </td>
-                    <td class="textColumn">
-                        @Html.DisplayFor(modelItem => tasting.nose)
-                    </td>
-                    <td class="textColumn">
-                        @Html.DisplayFor(modelItem => tasting.palate)
-                    </td>
-                    <td class="textColumn">
-                        @Html.DisplayFor(modelItem => tasting.finish)
-                    </td>
-                    <td class="textColumn">
-                        @Html.DisplayFor(modelItem => tasting.comment)
-                    </td>
-                    <td>
-                        <div>
-                            @Html.ActionLink("Edit", "Edit", new { id = tasting._id }, new { @class = "btn-sm btn-default" })
-                            @Html.ActionLink("Delete", "Delete", new { id = tasting._id }, new { @class = "btn-sm btn-default" })
-                        </div>
-                    </td>
-                </tr>
-            }
-        }
-    </tbody>
-</table>
+                        <tr>
+                            <td class="dateColumn">
+                                @Html.DisplayFor(modelItem => note.dateAdded)
+                            </td>
+                            <td class="textColumn">
+                                @Html.DisplayFor(modelItem => note.note)
+                            </td>
+                            <td class="editColumn">
+                                <div>
+                                    @Html.ActionLink("Edit", "Edit", new { id = note._id }, new { @class = "btn-sm btn-default" })
+                                    @Html.ActionLink("Delete", "Delete", new { id = note._id }, new { @class = "btn-sm btn-default" })
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            </div>
 
+        <div id="mytasting" class="tab-pane fade">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="dateColumn">
+                            @Html.DisplayNameFor(model => model.tastings[0].dateAddedPretty)
+                        </th>
+                        <th class="ratingColumn">
+                            @Html.DisplayNameFor(model => model.tastings[0].rating)
+                        </th>
+                        <th class="textColumn">
+                            @Html.DisplayNameFor(model => model.tastings[0].nose)
+                        </th>
+                        <th class="textColumn">
+                            @Html.DisplayNameFor(model => model.tastings[0].palate)
+                        </th>
+                        <th class="textColumn">
+                            @Html.DisplayNameFor(model => model.tastings[0].finish)
+                        </th>
+                        <th class="textColumn">
+                            @Html.DisplayNameFor(model => model.tastings[0].comment)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
 
-<h3>3rd Party Tasting Notes</h3>
-<table class="table">
-    <thead>
-        <tr>
-            <th class="dateColumn">
-                @Html.DisplayNameFor(model => model.tastings[0].dateAddedPretty)
-            </th>
-            <th class="ratingColumn">
-                @Html.DisplayNameFor(model => model.tastings[0].rating)
-            </th>
-            <th class="textColumn">
-                @Html.DisplayNameFor(model => model.tastings[0].nose)
-            </th>
-            <th class="textColumn">
-                @Html.DisplayNameFor(model => model.tastings[0].palate)
-            </th>
-            <th class="textColumn">
-                @Html.DisplayNameFor(model => model.tastings[0].finish)
-            </th>
-            <th class="textColumn">
-                @Html.DisplayNameFor(model => model.tastings[0].comment)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-
-    <tbody>
-        @foreach (var tasting in Model.tastings)
-        {
-            @if (tasting.thirdParty)
+                <tbody>
+                    @foreach (var tasting in Model.tastings)
             {
-                <tr>
-                    <td class="dateColumn">
-                        @Html.DisplayFor(modelItem => tasting.dateAddedPretty)
-                    </td>
-                    <td class="ratingColumn">
-                        @Html.DisplayFor(modelItem => tasting.rating)
-                    </td>
-                    <td class="textColumn">
-                        @Html.DisplayFor(modelItem => tasting.nose)
-                    </td>
-                    <td class="textColumn">
-                        @Html.DisplayFor(modelItem => tasting.palate)
-                    </td>
-                    <td class="textColumn">
-                        @Html.DisplayFor(modelItem => tasting.finish)
-                    </td>
-                    <td class="textColumn">
-                        @Html.DisplayFor(modelItem => tasting.comment)
-                    </td>
-                    <td>
-                        <div>
-                            @Html.ActionLink("Edit", "Edit", new { id = tasting._id }, new { @class = "btn-sm btn-default" })
-                            @Html.ActionLink("Delete", "Delete", new { id = tasting._id }, new { @class = "btn-sm btn-default" })
-                        </div>
-                    </td>
-                </tr>
-            }
-        }
-    </tbody>
-</table>
+                        @if (tasting.personal)
+                {
+                            <tr>
+                                <td class="dateColumn">
+                                    @Html.ActionLink(tasting.dateAddedPretty, "Details", "Tasting", new { id = tasting._id })
+                                </td>
+                                <td class="ratingColumn">
+                                    @Html.DisplayFor(modelItem => tasting.rating)
+                                </td>
+                                <td class="textColumn">
+                                    @Html.DisplayFor(modelItem => tasting.nose)
+                                </td>
+                                <td class="textColumn">
+                                    @Html.DisplayFor(modelItem => tasting.palate)
+                                </td>
+                                <td class="textColumn">
+                                    @Html.DisplayFor(modelItem => tasting.finish)
+                                </td>
+                                <td class="textColumn">
+                                    @Html.DisplayFor(modelItem => tasting.comment)
+                                </td>
+                                <td>
+                                    <div>
+                                        @Html.ActionLink("Edit", "Edit", new { id = tasting._id }, new { @class = "btn-sm btn-default" })
+                                        @Html.ActionLink("Delete", "Delete", new { id = tasting._id }, new { @class = "btn-sm btn-default" })
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+            </div>
 
-<h3>Wish Lists</h3>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Wish Lists
-            </th>
-            <th class="editColumn"></th>
-        </tr>
-    </thead>
+            <div id="3rdtasting" class="tab-pane fade">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="dateColumn">
+                                @Html.DisplayNameFor(model => model.tastings[0].dateAddedPretty)
+                            </th>
+                            <th class="ratingColumn">
+                                @Html.DisplayNameFor(model => model.tastings[0].rating)
+                            </th>
+                            <th class="textColumn">
+                                @Html.DisplayNameFor(model => model.tastings[0].nose)
+                            </th>
+                            <th class="textColumn">
+                                @Html.DisplayNameFor(model => model.tastings[0].palate)
+                            </th>
+                            <th class="textColumn">
+                                @Html.DisplayNameFor(model => model.tastings[0].finish)
+                            </th>
+                            <th class="textColumn">
+                                @Html.DisplayNameFor(model => model.tastings[0].comment)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
 
-    <tbody>
-        @foreach (var wishlist in Model.wishLists)
-        {
-            <tr>
-                <td class="textColumn">
-                    @Html.DisplayFor(modelItem => wishlist)
-                </td>
-                <td class="editColumn">
-                    <div>
-                        @Html.ActionLink("Delete", "Delete", new { /*id = wishlist._id */ }, new { @class = "btn-sm btn-default" })
-                    </div>
-                </td>
-            </tr>
+                    <tbody>
+                        @foreach (var tasting in Model.tastings)
+            {
+                            @if (tasting.thirdParty)
+                {
+                                <tr>
+                                    <td class="dateColumn">
+                                        @Html.DisplayFor(modelItem => tasting.dateAddedPretty)
+                                    </td>
+                                    <td class="ratingColumn">
+                                        @Html.DisplayFor(modelItem => tasting.rating)
+                                    </td>
+                                    <td class="textColumn">
+                                        @Html.DisplayFor(modelItem => tasting.nose)
+                                    </td>
+                                    <td class="textColumn">
+                                        @Html.DisplayFor(modelItem => tasting.palate)
+                                    </td>
+                                    <td class="textColumn">
+                                        @Html.DisplayFor(modelItem => tasting.finish)
+                                    </td>
+                                    <td class="textColumn">
+                                        @Html.DisplayFor(modelItem => tasting.comment)
+                                    </td>
+                                    <td>
+                                        <div>
+                                            @Html.ActionLink("Edit", "Edit", new { id = tasting._id }, new { @class = "btn-sm btn-default" })
+                                            @Html.ActionLink("Delete", "Delete", new { id = tasting._id }, new { @class = "btn-sm btn-default" })
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+                </div>
+
+        <div id="wishlists" class="tab-pane fade">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Wish Lists
+                        </th>
+                        <th class="editColumn"></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var wishlist in Model.wishLists)
+            {
+                        <tr>
+                            <td class="textColumn">
+                                @Html.DisplayFor(modelItem => wishlist)
+                            </td>
+                            <td class="editColumn">
+                                <div>
+                                    @Html.ActionLink("Delete", "Delete", new { /*id = wishlist._id */ }, new { @class = "btn-sm btn-default" })
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function edit(id) {
+            console.log(id);
+            window.location.href = "http://localhost:62942/Scotch/Edit/" + id;
         }
-    </tbody>
-</table>
-<script type="text/javascript">
-    function edit(id) {
-        console.log(id);
-        window.location.href = "http://localhost:62942/Scotch/Edit/" + id;
-    }
-</script>
+    </script>

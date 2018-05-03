@@ -99,6 +99,29 @@ a:hover, a:active {
 }
 
 
+.logo {
+    text-align: center;
+}
+
+.scotchy-navbar {
+    margin: 20px 0px 20px 0px;
+    height: 30px;
+    text-align: center;
+    padding: 13px 0px 2px 0px;
+}
+
+.caption {
+    font-style: italic;
+}
+
+.navbar-fixed-top {
+    box-shadow: 5px 5px 10px gray;
+}
+
+.star {
+    float: left;
+}
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */
@@ -106,3 +129,4 @@ a:hover, a:active {
         display: none;
     }
 }
+

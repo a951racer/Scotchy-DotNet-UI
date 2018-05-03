@@ -1,0 +1,93 @@
+﻿@model Tasting.Model.TastingDTO
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TastingDTO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model._id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model._id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dateAdded)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dateAdded)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.location)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.location)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.rating)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.rating)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.thirdParty)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.thirdParty)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.nose)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nose)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.palate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.palate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.finish)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.finish)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.comment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.comment)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.personal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.personal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dateAddedPretty)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dateAddedPretty)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dramName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dramName)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

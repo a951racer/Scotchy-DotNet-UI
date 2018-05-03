@@ -1,17 +1,19 @@
 ﻿@model IEnumerable<Tasting.Model.TastingDTO>
 
+<link href="~/css/TastingList.css" rel="stylesheet" />
+
 @{
     ViewData["Title"] = "Tastings";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Tastings</h2>
+<h2>Tasting Notes</h2>
 
 
 <table class="table">
     <thead>
         <tr>
-            <th></th>
+            <th class="openColumn"></th>
             <th class="dateColumn">
                 @Html.DisplayNameFor(model => model.dateAddedPretty)
             </th>
@@ -33,13 +35,15 @@
             <th class="textColumn">
                 @Html.DisplayNameFor(model => model.finish)
             </th>
+            <!-- <th class="editColumn"></th> -->
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.ActionLink("Details", "Details", new { id = item._id }, new { @class = "btn-sm btn-default" })
+            <td class="openColumn">
+                <a href="@Url.Action("Details", new {id = item._id})" class=""><i class="far fa-folder-open"></i></a>
+                
             </td>
             <td class="dateColumn">
                 @Html.DisplayFor(modelItem => item.dateAddedPretty)
@@ -47,11 +51,27 @@
             <td class="textColumn">
                 @Html.DisplayFor(modelItem => item.dramName)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.personal)
+            <td class="instockColumn check-mark">
+                @if (item.personal)
+                {
+                    <i class="fa fa-check"></i>
+                }
             </td>
             <td class="ratingColumn">
-                @Html.DisplayFor(modelItem => item.rating)
+                <div>
+                    @for (var i = 1; i <= item.rating; i++)
+                    {
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                        </div>
+                    }
+                    @for (var j = item.rating + 1; j <= 5; j++)
+                {
+                        <div class="star">
+                            <i class="far fa-star"></i>
+                        </div>
+                    }
+                </div>
             </td>
             <td class="textColumn">
                 @Html.DisplayFor(modelItem => item.nose)
@@ -62,6 +82,10 @@
             <td class="textColumn">
                 @Html.DisplayFor(modelItem => item.finish)
             </td>
+            <!--<td class="editColumn">
+                @Html.ActionLink("Edit", "Edit", new { id = item._id }, new { @class = "btn-xs btn-default" })
+                @Html.ActionLink("Delete", "Delete", new { id = item._id }, new { @class = "btn-xs btn-default" })
+            </td> -->
         </tr>
 }
     </tbody>

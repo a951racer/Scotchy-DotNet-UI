@@ -2,11 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Scotch.Model;
+using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Web;
 
 namespace Scotch.Controllers
 {
@@ -47,6 +49,7 @@ namespace Scotch.Controllers
             {
                 var result = res.Content.ReadAsStringAsync().Result;
                 dto = JsonConvert.DeserializeObject<ScotchDTO>(result);
+                ViewBag.returnUrl = Request.Headers["Referer"].ToString();
             }
 
             if (dto == null)
@@ -60,6 +63,7 @@ namespace Scotch.Controllers
         // GET: Scotches/Create  
         public IActionResult Create()
         {
+            ViewBag.returnUrl = Request.Headers["Referer"].ToString();
             return View();
         }
 
@@ -98,6 +102,7 @@ namespace Scotch.Controllers
             {
                 var result = res.Content.ReadAsStringAsync().Result;
                 dto = JsonConvert.DeserializeObject<ScotchDTO>(result);
+                ViewBag.returnUrl = Request.Headers["Referer"].ToString();
             }
 
             //var WishList = dto.SingleOrDefault(m => m.wishListName == wishListName);
@@ -113,7 +118,7 @@ namespace Scotch.Controllers
         // POST: Scotches/Edit/1  
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(string id, [Bind("distillerName,flavor,age,style,region,inStock,bottlingNotes,comment,_id")] ScotchDTO Scotch)
+        public IActionResult Edit(string id, string returnUrl, [Bind("distillerName,flavor,age,style,region,inStock,bottlingNotes,comment,_id")] ScotchDTO Scotch)
         {
             if (id != Scotch._id)
             {
@@ -128,9 +133,11 @@ namespace Scotch.Controllers
                 HttpResponseMessage res = client.PutAsync("/api/scotches/" + id, content).Result;
                 if (res.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("Index");
+                    //return RedirectToAction("Index");
+                    return Redirect(returnUrl);
                 }
             }
+            ViewBag.returnUrl = returnUrl;
             return View(Scotch);
         }
 
@@ -150,6 +157,7 @@ namespace Scotch.Controllers
             {
                 var result = res.Content.ReadAsStringAsync().Result;
                 dto = JsonConvert.DeserializeObject<ScotchDTO>(result);
+                ViewBag.returnUrl = Request.Headers["Referer"].ToString();
             }
 
             //var WishList = dto.SingleOrDefault(m => m.wishListName == wishListName);
@@ -174,6 +182,10 @@ namespace Scotch.Controllers
             }
 
             return NotFound();
+        }
+        public IActionResult Cancel(string returnUrl)
+        {
+            return Redirect(returnUrl);
         }
 
     }

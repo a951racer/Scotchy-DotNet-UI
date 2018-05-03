@@ -27,7 +27,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.ActionLink("Details", "Details", new { id = item._id }, new { @class = "btn-sm btn-default" })
+                <a href="@Url.Action("Details", new {id = item._id})" class = ""><i class="far fa-folder-open"></i></a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.wishListName)
@@ -36,8 +36,8 @@
                 @Html.DisplayFor(modelItem => item.description)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item._id }, new { @class = "btn-sm btn-default" })
-                @Html.ActionLink("Delete", "Delete", new { id = item._id }, new { @class = "btn-sm btn-default" })
+                @Html.ActionLink("Edit", "Edit", new { id = item._id }, new { @class = "btn-xs btn-default" })
+                @Html.ActionLink("Delete", "Delete", new { id = item._id }, new { @class = "btn-xs btn-default" })
             </td>
         </tr>
 }

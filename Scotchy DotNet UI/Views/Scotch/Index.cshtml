@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<Scotch.Model.ScotchDTO>
 
+<link href="~/css/ScotchList.css" rel="stylesheet" />
+
 @{
     ViewData["Title"] = "Scotches";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -13,61 +15,77 @@
 <table class="table">
     <thead>
         <tr>
-            <th></th>
-            <th>
+            <th class="openColumn"></th>
+            <th class="textColumn">
                 @Html.DisplayNameFor(model => model.distillerName)
             </th>
-            <th>
+            <th class="textColumn">
                 @Html.DisplayNameFor(model => model.flavor)
             </th>
-            <th>
+            <th class="numericColumn">
                 @Html.DisplayNameFor(model => model.age)
             </th>
-            <th>
+            <th class="textColumn">
                 @Html.DisplayNameFor(model => model.style)
             </th>
-            <th>
+            <th class="textColumn">
                 @Html.DisplayNameFor(model => model.region)
             </th>
-            <th>
+            <th class="instockColumn">
                 @Html.DisplayNameFor(model => model.inStock)
             </th>
-            <th>
+            <th class="ratingColumn">
                 @Html.DisplayNameFor(model => model.rating)
             </th>
-            <th></th>
+            <th class="editColumn"></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.ActionLink("Details", "Details", new { id = item._id }, new { @class = "btn-sm btn-default" })
+            <td class="openColumn">
+                <a href="@Url.Action("Details", new {id = item._id})" class=""><i class="far fa-folder-open"></i></a>
             </td>
-            <td>
+            <td class="textColumn">
                 @Html.DisplayFor(modelItem => item.distillerName)
             </td>
-            <td>
+            <td class="textColumn">
                 @Html.DisplayFor(modelItem => item.flavor)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.age)
             </td>
-            <td>
+            <td class="textColumn">
                 @Html.DisplayFor(modelItem => item.style)
             </td>
-            <td>
+            <td class="textColumn">
                 @Html.DisplayFor(modelItem => item.region)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.inStock)
+            <td class="instockColumn check-mark">
+                @if (item.inStock)
+                {
+                    <i class="fa fa-check"></i>
+                }
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.rating)
+            <td class="ratingColumn">
+                <div>
+                    @for (var i = 1; i <= item.rating; i++)
+                    {
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                        </div>
+                    }
+                    @for (var j = item.rating + 1; j <= 5; j++)
+                {
+                        <div class="star">
+                            <i class="far fa-star"></i>
+                        </div>
+                    }
+                </div>
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item._id }, new { @class = "btn-sm btn-default" })
-                @Html.ActionLink("Delete", "Delete", new { id = item._id }, new { @class = "btn-sm btn-default" })
+            <td class="editColumn">
+                @Html.ActionLink("Edit", "Edit", new { id=item._id }, new { @class = "btn-xs btn-default" })
+                @Html.ActionLink("Delete", "Delete", new { id = item._id }, new { @class = "btn-xs btn-default" })
             </td>
         </tr>
 }

@@ -21,8 +21,4 @@
     <None Include="wwwroot\favicon.ico.old" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\Price\" />
-  </ItemGroup>
-
 </Project>
