@@ -10,7 +10,9 @@ namespace WishList.Model
         public string _id { get; set; }
         [Display(Name = "Name")]
         public string wishListName { get; set; }
-        [Display(Name = "Created")] [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
+        [Display(Name = "Created")]
+        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime dateAdded { get; set; }
         [Display(Name = "Created By")]
         public CreatorDTO creator { get; set; }

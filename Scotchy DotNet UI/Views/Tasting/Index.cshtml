@@ -43,13 +43,12 @@
         <tr>
             <td class="openColumn">
                 <a href="@Url.Action("Details", new {id = item._id})" class=""><i class="far fa-folder-open"></i></a>
-                
             </td>
             <td class="dateColumn">
                 @Html.DisplayFor(modelItem => item.dateAddedPretty)
             </td>
             <td class="textColumn">
-                @Html.DisplayFor(modelItem => item.dramName)
+                @Html.ActionLink(item.dramName, "Details", "Scotch", new { id = item.scotchId })
             </td>
             <td class="instockColumn check-mark">
                 @if (item.personal)

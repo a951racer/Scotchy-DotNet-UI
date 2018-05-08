@@ -1,0 +1,27 @@
+﻿@model Note.Model.NoteDTO
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Note for @Html.DisplayFor(model => model.dramName)</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.dateAdded):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dateAdded)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.note):
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.note)
+        </dd>
+    </dl>
+</div>
+@Html.Partial("_BackButton")

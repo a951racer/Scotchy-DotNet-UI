@@ -6,6 +6,7 @@ namespace Tasting.Model
     public class TastingDTO
     {
         public string _id { get; set; }
+        [DataType(DataType.Date)]
         [Display(Name = "Date")]
         public DateTime dateAdded { get; set; }
         [Display(Name = "Location")]
@@ -28,6 +29,6 @@ namespace Tasting.Model
         public string dateAddedPretty { get; set; }
         [Display(Name = "Dram")]
         public string dramName { get; set; }
-
+        public string scotchId { get; set; }
     }
 }

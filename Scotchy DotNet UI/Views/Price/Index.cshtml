@@ -51,7 +51,7 @@
                 @Html.DisplayFor(modelItem => item.dateAdded)
             </td>
             <td class="textColumn">
-                @Html.DisplayFor(modelItem => item.dramName)
+                @Html.ActionLink(item.dramName, "Details", "Scotch", new { id = item.scotchId })
             </td>
             <td class="textColumn">
                 @Html.DisplayFor(modelItem => item.location)

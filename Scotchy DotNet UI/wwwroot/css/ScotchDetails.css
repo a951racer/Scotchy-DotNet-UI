@@ -47,3 +47,62 @@
     font-size: 150%;
     font-weight: bold;
 }
+
+/*************************************
+    All Tables
+***************************************/
+
+.Open-Column {
+    max-width: 27px;
+    text-align: center;
+}
+
+.Edit-Column {
+    max-width: 70px;
+    text-align: center;
+}
+
+.hiddenData {
+    display: none;
+}
+
+.filterRow {
+    background-color: darkolivegreen;
+}
+
+/************************************
+    Notes table
+*************************************/
+
+.Note-Comment-Column {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /*max-width: 150px;*/
+}
+
+.Note-Date-Column {
+    min-width: 105px;
+    max-width: 115px;
+}
+
+/************************************
+    Tastings table
+*************************************/
+
+.Tasting-Comment-Column {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.Tasting-Date-Column {
+    min-width: 105px;
+    max-width: 115px;
+}
+
+.Tasting-Rating-Column {
+    min-width: 40px;
+    max-width: 100px;
+}

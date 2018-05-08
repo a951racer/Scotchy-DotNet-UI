@@ -1,0 +1,19 @@
+﻿<thead>
+    <tr>
+        @if (ViewBag.TableProps.detailsButton)
+        {
+            <th class="openColumn"></th>
+        }
+        @foreach (var column in ViewBag.Columns)
+        { 
+            <th class="textColumn">
+                <span>@column.header</span>
+            </th>
+        }
+        @if (ViewBag.TableProps.editButton || ViewBag.TableProps.deleteButton)
+        {
+            <th class="openColumn"></th>
+        }
+
+    </tr>
+</thead>

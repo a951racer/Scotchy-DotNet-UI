@@ -22,7 +22,7 @@
             <th class="textColumn">
                 @Html.DisplayNameFor(model => model.flavor)
             </th>
-            <th class="numericColumn">
+            <th class="">
                 @Html.DisplayNameFor(model => model.age)
             </th>
             <th class="textColumn">
@@ -38,10 +38,12 @@
                 @Html.DisplayNameFor(model => model.rating)
             </th>
             <th class="editColumn"></th>
+
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
         <tr>
             <td class="openColumn">
                 <a href="@Url.Action("Details", new {id = item._id})" class=""><i class="far fa-folder-open"></i></a>
@@ -76,7 +78,7 @@
                         </div>
                     }
                     @for (var j = item.rating + 1; j <= 5; j++)
-                {
+                    {
                         <div class="star">
                             <i class="far fa-star"></i>
                         </div>
@@ -84,10 +86,10 @@
                 </div>
             </td>
             <td class="editColumn">
-                @Html.ActionLink("Edit", "Edit", new { id=item._id }, new { @class = "btn-xs btn-default" })
+                @Html.ActionLink("Edit", "Edit", new { id = item._id }, new { @class = "btn-xs btn-default" })
                 @Html.ActionLink("Delete", "Delete", new { id = item._id }, new { @class = "btn-xs btn-default" })
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>

@@ -1,0 +1,11 @@
+﻿@foreach (var row in Model) {
+    <tr>
+        @foreach (var column in ViewBag.Columns)
+        {
+            <td class="textColumn">
+                
+                @Html.DisplayFor(modelItem => row.column.fieldName)
+            </td>
+        }
+    </tr>
+}

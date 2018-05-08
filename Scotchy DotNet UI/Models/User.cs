@@ -13,6 +13,7 @@ namespace User.Model
         [Display(Name = "Salt")] public string salt { get; set; }
         [Display(Name = "Provider")] public string provider { get; set; }
         [Display(Name = "Provider Id")] public string providerId { get; set; }
+        [DataType(DataType.Date)]
         [Display(Name = "Created")] public DateTime created { get; set; }
         [Display(Name = "Full Name")] public virtual string fullName { get; set; }
     }

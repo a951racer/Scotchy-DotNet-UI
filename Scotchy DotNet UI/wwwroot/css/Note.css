@@ -1,0 +1,34 @@
+﻿.Note-Open-Column {
+    max-width: 25px;
+    text-align: center;
+}
+
+    .Note-Open-Column > a:hover {
+        background-color: none;
+    }
+
+.Note-Edit-Column {
+    max-width: 20px;
+    text-align: center;
+}
+
+
+.hiddenData {
+    display: none;
+}
+
+.filterRow {
+    background-color: darkolivegreen;
+}
+
+.Note-Comment-Column {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+.Note-Date-Column {
+    min-width: 105px;
+}
+

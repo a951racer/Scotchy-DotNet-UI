@@ -11,7 +11,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.dateAddedPretty)
+            @Html.DisplayNameFor(model => model.dateAddedPretty):
         </dt>
         <dd>
             @Html.DisplayFor(model => model.dateAddedPretty)
@@ -19,51 +19,47 @@
         <dt>
             @if (Model.thirdParty)
             {
-                <span>Source</span>
+                <span>Source:</span>
             }
             else
             {
                 @Html.DisplayNameFor(model => model.location)
+                <span>:</span>
             }
         </dt>
         <dd>
             @Html.DisplayFor(model => model.location)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.rating)
+            @Html.DisplayNameFor(model => model.rating):
         </dt>
         <dd>
             @Html.DisplayFor(model => model.rating)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.nose)
+            @Html.DisplayNameFor(model => model.nose):
         </dt>
         <dd>
             @Html.DisplayFor(model => model.nose)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.palate)
+            @Html.DisplayNameFor(model => model.palate):
         </dt>
         <dd>
             @Html.DisplayFor(model => model.palate)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.finish)
+            @Html.DisplayNameFor(model => model.finish):
         </dt>
         <dd>
             @Html.DisplayFor(model => model.finish)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.comment)
+            @Html.DisplayNameFor(model => model.comment):
         </dt>
         <dd>
             @Html.DisplayFor(model => model.comment)
         </dd>
     </dl>
 </div>
-<div class="hidden">
-    <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
-</div>
-<div>
-    <a href="@ViewBag.returnUrl" class="btn btn-default">Back</a>
-</div>
+@Html.Partial("_BackButton")
